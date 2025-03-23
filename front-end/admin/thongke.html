@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thống Kê</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/SanPham/CSS/style.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <nav class="mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="/SanPham/img/logoDojin Luxury.jpg" alt="Dojin Luxury" class="rounded-circle" width="60" height="60">
+                    <span class="ms-3 fs-5">Dojin Luxury</span>
+                </div>
+            </nav>
+            <div>
+                <div class="container-fluid">
+                    <span>Wellcome,</span><span> Chu Thị Ngọc</span>
+                </div>
+                <div class="container-fluid">
+                    <a href="banhang.html"><button class="navbar-brand btn btn-dark w-100 p-3 mb-2 text-light">Bán hàng tại quầy</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="hienthi.html"><button class="navbar-brand mb-0 h1 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý sản phẩm</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="nhanvien.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light ">Quản lý nhân viên</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="khachhang.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý khách hàng</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="hoadon.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý hóa đơn</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="thongke.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Thống kê</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="magiamgia.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý mã giảm giá</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="taikhoan.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý tài khoản</button></a>
+                </div>
+                <div class="container-fluid">
+                    <button class="navbar-brand mb-0 h2 btn btn-danger w-100 p-3 mb-2 text-light">
+                        Đăng xuất
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd"
+                                  d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container-fluid p-4">
+            <!-- Thống kê tổng quan -->
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Doanh thu hôm nay</h5>
+                            <h3 class="mb-0">5,200,000đ</h3>
+                            <small>+15% so với hôm qua</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Đơn hàng hôm nay</h5>
+                            <h3 class="mb-0">12</h3>
+                            <small>+5 đơn so với hôm qua</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Khách hàng mới</h5>
+                            <h3 class="mb-0">8</h3>
+                            <small>Trong tuần này</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-info text-white">
+                        <div class="card-body">
+                            <h5 class="card-title">Sản phẩm bán chạy</h5>
+                            <h3 class="mb-0">25</h3>
+                            <small>Trong tháng này</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biểu đồ -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <strong>Biểu đồ doanh thu</strong>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <strong>Top sản phẩm bán chạy</strong>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="productChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bảng thống kê chi tiết -->
+            <div class="card">
+                <div class="card-header">
+                    <strong>Thống kê chi tiết doanh thu</strong>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Ngày</th>
+                                <th>Doanh thu</th>
+                                <th>Số đơn hàng</th>
+                                <th>Trung bình/đơn</th>
+                                <th>So với hôm trước</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01/03/2024</td>
+                                <td>5,200,000đ</td>
+                                <td>12</td>
+                                <td>433,333đ</td>
+                                <td class="text-success">+15%</td>
+                            </tr>
+                            <!-- Thêm các dòng khác -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Biểu đồ doanh thu
+        const revenueChart = new Chart(document.getElementById('revenueChart'), {
+            type: 'line',
+            data: {
+                labels: ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'],
+                datasets: [{
+                    label: 'Doanh thu (triệu đồng)',
+                    data: [5.2, 4.8, 6.1, 5.5, 7.2, 8.5, 6.8],
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            }
+        });
+
+        // Biểu đồ sản phẩm
+        const productChart = new Chart(document.getElementById('productChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Túi xách', 'Ví', 'Balo', 'Khác'],
+                datasets: [{
+                    data: [45, 25, 20, 10],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(54, 162, 235)',
+                        'rgb(255, 205, 86)',
+                        'rgb(75, 192, 192)'
+                    ]
+                }]
+            }
+        });
+    </script>
+</body>
+</html> 

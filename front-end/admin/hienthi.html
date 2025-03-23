@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/SanPham/CSS/style.css">
+</head>
+<body>
+    <div class="d-flex">
+         <!-- Sidebar -->
+         <div class="sidebar">
+            <nav class="mb-4">
+                <div class="d-flex align-items-center mb-3">
+                    <img src="/SanPham/img/logoDojin Luxury.jpg" alt="Dojin Luxury" class="rounded-circle" width="60" height="60">
+                    <span class="ms-3 fs-5">Dojin Luxury</span>
+                </div>
+            </nav>
+            <div>
+                <div class="container-fluid">
+                    <span>Wellcome,</span><span> Chu Thị Ngọc</span>
+                </div>
+                <div class="container-fluid">
+                    <a href="banhang.html"><button class="navbar-brand btn btn-dark w-100 p-3 mb-2 text-light">Bán hàng tại quầy</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="hienthi.html"><button class="navbar-brand mb-0 h1 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý sản phẩm</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="nhanvien.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light ">Quản lý nhân viên</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="khachhang.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý khách hàng</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="hoadon.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý hóa đơn</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="thongke.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Thống kê</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="magiamgia.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý mã giảm giá</button></a>
+                </div>
+                <div class="container-fluid">
+                    <a href="taikhoan.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý tài khoản</button></a>
+                </div>
+                <div class="container-fluid">
+                    <button class="navbar-brand mb-0 h2 btn btn-danger w-100 p-3 mb-2 text-light">
+                        Đăng xuất
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                  d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                            <path fill-rule="evenodd"
+                                  d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container-fluid p-4">
+            <div class="card mb-4">
+                <div class="card-header bg-warning text-white">
+                    <strong>Thêm sản phẩm</strong>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="maSanPham" class="form-label">Mã sản phẩm</label>
+                                <input type="text" id="maSanPham" class="form-control" placeholder="Nhập mã sản phẩm">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="tenSanPham" class="form-label">Tên sản phẩm</label>
+                                <input type="text" id="tenSanPham" class="form-control" placeholder="Nhập tên sản phẩm">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="chatLieu" class="form-label">Loại</label>
+                                <input type="text" id="chatLieu" class="form-control" placeholder="Nhập chất liệu">
+                            </div>
+                            <!-- <div class="col-md-4 mb-3">
+                                <label for="thuongHieu" class="form-label">Thương hiệu</label>
+                                <input type="text" id="thuongHieu" class="form-control" placeholder="Nhập thương hiệu">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="xuatXu" class="form-label">Xuất xứ</label>
+                                <input type="text" id="xuatXu" class="form-control" placeholder="Nhập xuất xứ">
+                            </div> -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Trạng thái</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="trangThai" id="conHang" value="Còn hàng" checked>
+                                    <label class="form-check-label" for="conHang">Còn hàng</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="trangThai" id="hetHang" value="Hết hàng">
+                                    <label class="form-check-label" for="hetHang">Hết hàng</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Thêm sản phẩm</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header bg-warning text-white">
+                    <strong>Danh sách sản phẩm</strong>
+                </div>
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Loại</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>SP001</td>
+                                <td>Sản phẩm A</td>
+                                <td></td>
+                                <td><span class="badge bg-success">Còn hàng</span></td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm">Sửa</button>
+                                    <button class="btn btn-danger btn-sm">Xóa</button>
+                                </td>
+                            </tr>
+                            <!-- Thêm các dòng sản phẩm khác -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

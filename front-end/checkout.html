@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - Dojin Luxury</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dojin Luxury</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Thêm form tìm kiếm -->
+                <form class="d-flex me-auto ms-4">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" style="min-width: 300px;">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Danh mục
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Túi xách tay</a></li>
+                            <li><a class="dropdown-item" href="#">Túi đeo chéo</a></li>
+                            <li><a class="dropdown-item" href="#">Túi đeo vai</a></li>
+                            <li><a class="dropdown-item" href="#">Balo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <!-- Thêm nút tra cứu đơn hàng -->
+                    <button type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#orderTrackingModal">
+                        <i class="fas fa-truck me-1"></i> Tra cứu đơn hàng
+                    </button>
+
+                    <a href="#" class="btn btn-outline-dark me-2 position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </a>
+                    <div class="dropdown me-3">
+                        <a class="btn btn-outline-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Nguyễn Văn A
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Tài khoản</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Lịch sử mua hàng</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Tra cứu đơn hàng -->
+    <div class="modal fade" id="orderTrackingModal" tabindex="-1">
+        // ... existing modal code ...
+    </div>
+
+    <!-- Modal Giỏ hàng -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        // ... existing modal code ...
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <!-- Form thanh toán -->
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Thông tin thanh toán</h3>
+                        <form>
+                            <!-- Thông tin cá nhân -->
+                            <div class="mb-4">
+                                <h5>Thông tin cá nhân</h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Họ và tên</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Số điện thoại</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Địa chỉ giao hàng -->
+                            <div class="mb-4">
+                                <h5>Địa chỉ giao hàng</h5>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Tỉnh/Thành phố</label>
+                                        <select class="form-select" required>
+                                            <option value="">Chọn tỉnh/thành phố</option>
+                                            <option>Hà Nội</option>
+                                            <option>TP. Hồ Chí Minh</option>
+                                            <option>Đà Nẵng</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Quận/Huyện</label>
+                                        <select class="form-select" required>
+                                            <option value="">Chọn quận/huyện</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label class="form-label">Phường/Xã</label>
+                                        <select class="form-select" required>
+                                            <option value="">Chọn phường/xã</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label class="form-label">Địa chỉ cụ thể</label>
+                                        <input type="text" class="form-control" placeholder="Số nhà, tên đường..." required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Phương thức thanh toán -->
+                            <div class="mb-4">
+                                <h5>Phương thức thanh toán</h5>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="payment" id="cod" checked>
+                                    <label class="form-check-label" for="cod">
+                                        <i class="fas fa-money-bill-wave me-2"></i>Thanh toán khi nhận hàng (COD)
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio" name="payment" id="banking">
+                                    <label class="form-check-label" for="banking">
+                                        <i class="fas fa-university me-2"></i>Chuyển khoản ngân hàng
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="payment" id="momo">
+                                    <label class="form-check-label" for="momo">
+                                        <i class="fas fa-wallet me-2"></i>Ví MoMo
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Ghi chú -->
+                            <div class="mb-4">
+                                <h5>Ghi chú</h5>
+                                <textarea class="form-control" rows="3" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tổng quan đơn hàng -->
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Đơn hàng của bạn</h5>
+                        <!-- Danh sách sản phẩm -->
+                        <div class="mb-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="/SanPham/img/1.jpg" alt="Túi xách" style="width: 60px; height: 60px; object-fit: cover" class="me-3">
+                                <div>
+                                    <h6 class="mb-0">Túi xách thời trang</h6>
+                                    <small class="text-muted">Số lượng: 1</small>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="fw-bold">1,200,000đ</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mã giảm giá -->
+                        <div class="mb-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Mã giảm giá">
+                                <button class="btn btn-outline-primary">Áp dụng</button>
+                            </div>
+                        </div>
+
+                        <!-- Tổng tiền -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Tạm tính</span>
+                                <span>1,200,000đ</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Phí vận chuyển</span>
+                                <span>30,000đ</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <strong>Tổng cộng</strong>
+                                <strong class="text-danger">1,230,000đ</strong>
+                            </div>
+                        </div>
+
+                        <!-- Nút đặt hàng -->
+                        <button class="btn btn-primary w-100 btn-lg">
+                            Đặt hàng
+                        </button>
+
+                        <!-- Chính sách -->
+                        <div class="mt-4 small text-muted">
+                            <p class="mb-1">
+                                <i class="fas fa-shield-alt me-2"></i>
+                                Thanh toán an toàn và bảo mật
+                            </p>
+                            <p class="mb-1">
+                                <i class="fas fa-truck me-2"></i>
+                                Giao hàng toàn quốc
+                            </p>
+                            <p class="mb-0">
+                                <i class="fas fa-exchange-alt me-2"></i>
+                                Đổi trả trong vòng 30 ngày
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer đơn giản -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Dojin Luxury</h5>
+                    <p class="mb-0">Hotline: 0123 456 789</p>
+                    <p class="mb-0">Email: info@tuixinh.com</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">© 2024 Dojin Luxury. Tất cả các quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

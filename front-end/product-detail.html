@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Dojin Luxury</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dojin Luxury</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Form tìm kiếm -->
+                <form class="d-flex me-auto ms-4">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" style="min-width: 300px;">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Danh mục
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Túi xách tay</a></li>
+                            <li><a class="dropdown-item" href="#">Túi đeo chéo</a></li>
+                            <li><a class="dropdown-item" href="#">Túi đeo vai</a></li>
+                            <li><a class="dropdown-item" href="#">Balo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <!-- Nút tra cứu đơn hàng -->
+                    <button type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#orderTrackingModal">
+                        <i class="fas fa-truck me-1"></i> Tra cứu đơn hàng
+                    </button>
+
+                    <a href="#" class="btn btn-outline-dark me-2 position-relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </a>
+                    <div class="dropdown me-3">
+                        <a class="btn btn-outline-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Nguyễn Văn A
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Tài khoản</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Lịch sử mua hàng</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Tra cứu đơn hàng -->
+    <div class="modal fade" id="orderTrackingModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tra cứu đơn hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="orderNumber" class="form-label">Mã đơn hàng</label>
+                            <input type="text" class="form-control" id="orderNumber" placeholder="Nhập mã đơn hàng của bạn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Số điện thoại</label>
+                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Nhập số điện thoại đặt hàng">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Tra cứu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container mt-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="#">Túi xách tay</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Túi xách thời trang</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Chi tiết sản phẩm -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Hình ảnh sản phẩm -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Ảnh chính -->
+                        <div class="mb-3">
+                            <img src="/SanPham/img/1.jpg" class="img-fluid rounded" alt="Túi xách" id="mainImage">
+                        </div>
+                        <!-- Ảnh thumbnail -->
+                        <div class="d-flex gap-2">
+                            <img src="/SanPham/img/1.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
+                            <img src="/SanPham/img/10.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
+                            <img src="/SanPham/img/11.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
+                            <img src="/SanPham/img/12.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thông tin sản phẩm -->
+            <div class="col-md-6">
+                <h2 class="mb-3">Túi xách thời trang</h2>
+                <div class="mb-3">
+                    <span class="h3 text-danger">1,200,000đ</span>
+                    <span class="text-muted text-decoration-line-through ms-2">1,500,000đ</span>
+                    <span class="badge bg-danger ms-2">-20%</span>
+                </div>
+
+                <!-- Đánh giá -->
+                <div class="mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="text-warning me-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>(150 đánh giá)</span>
+                    </div>
+                </div>
+
+                <!-- Màu sắc -->
+                <div class="mb-3">
+                    <h6>Màu sắc:</h6>
+                    <div class="d-flex gap-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="color" id="color1" checked>
+                            <label class="form-check-label" for="color1">Đen</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="color" id="color2">
+                            <label class="form-check-label" for="color2">Nâu</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="color" id="color3">
+                            <label class="form-check-label" for="color3">Đỏ</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Số lượng -->
+                <div class="mb-4">
+                    <h6>Số lượng:</h6>
+                    <div class="input-group" style="width: 150px;">
+                        <button class="btn btn-outline-secondary" type="button" onclick="decreaseQuantity()">-</button>
+                        <input type="text" class="form-control text-center" value="1" id="quantity">
+                        <button class="btn btn-outline-secondary" type="button" onclick="increaseQuantity()">+</button>
+                    </div>
+                </div>
+
+                <!-- Nút mua hàng -->
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary btn-lg">
+                        <i class="fas fa-shopping-cart me-2"></i>Thêm vào giỏ
+                    </button>
+                    <button class="btn btn-danger btn-lg">Mua ngay</button>
+                </div>
+
+                <!-- Thông tin thêm -->
+                <div class="mt-4">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-truck text-primary me-2"></i>
+                        <span>Miễn phí vận chuyển cho đơn hàng từ 500,000đ</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="fas fa-shield-alt text-primary me-2"></i>
+                        <span>Bảo hành chính hãng 12 tháng</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-exchange-alt text-primary me-2"></i>
+                        <span>Đổi trả miễn phí trong 30 ngày</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mô tả và đánh giá -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description">Mô tả</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="reviews-tab" data-bs-toggle="tab" href="#reviews">Đánh giá (150)</a>
+                    </li>
+                </ul>
+                <div class="tab-content border border-top-0 p-4" id="productTabsContent">
+                    <div class="tab-pane fade show active" id="description">
+                        <h5>Thông tin chi tiết</h5>
+                        <p>Túi xách thời trang cao cấp với thiết kế hiện đại, sang trọng. Chất liệu da cao cấp, bền đẹp theo thời gian.</p>
+                        <ul>
+                            <li>Chất liệu: Da bò cao cấp</li>
+                            <li>Kích thước: 30 x 20 x 10 cm</li>
+                            <li>Màu sắc: Đen, Nâu, Đỏ</li>
+                            <li>Ngăn chứa: 2 ngăn chính, 1 ngăn phụ có khóa kéo</li>
+                            <li>Phụ kiện: Dây đeo có thể tháo rời</li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane fade" id="reviews">
+                        <!-- Đánh giá của khách hàng -->
+                        <div class="mb-4">
+                            <h5>Đánh giá của khách hàng</h5>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-shrink-0">
+                                            <img src="https://via.placeholder.com/50" class="rounded-circle">
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-0">Nguyễn Văn A</h6>
+                                            <div class="text-warning mb-1">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <small class="text-muted">2 ngày trước</small>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0">Sản phẩm rất đẹp, chất lượng tốt, đóng gói cẩn thận. Rất hài lòng với sản phẩm này!</p>
+                                </div>
+                            </div>
+                            <!-- Thêm các đánh giá khác -->
+                        </div>
+
+                        <!-- Form đánh giá -->
+                        <div>
+                            <h5>Viết đánh giá</h5>
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label">Đánh giá của bạn</label>
+                                    <div class="text-warning mb-2">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Nhận xét</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sản phẩm liên quan -->
+        <div class="row mt-5">
+            <h3 class="mb-4">Sản phẩm liên quan</h3>
+            <!-- Sản phẩm 1 -->
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="/SanPham/img/10.jpg" class="card-img-top" alt="Túi xách">
+                    <div class="card-body">
+                        <h5 class="card-title">Túi đeo chéo</h5>
+                        <p class="card-text text-danger fw-bold">890,000đ</p>
+                        <a href="#" class="btn btn-primary w-100">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Thêm các sản phẩm khác -->
+        </div>
+    </div>
+
+    <!-- Footer (copy từ index.html) -->
+    <footer class="bg-dark text-light py-4">
+        <!-- Copy nội dung footer từ index.html -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+
+        function increaseQuantity() {
+            var input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function decreaseQuantity() {
+            var input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+    </script>
+</body>
+</html>

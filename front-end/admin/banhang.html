@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán Hàng Tại Quầy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/SanPham/CSS/style.css">
+</head>
+<body>
+    <div class="d-flex">
+       <!-- Sidebar -->
+       <div class="sidebar">
+        <nav class="mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <img src="/SanPham/img/logoDojin Luxury.jpg" alt="Dojin Luxury" class="rounded-circle" width="60" height="60">
+                <span class="ms-3 fs-5">Dojin Luxury</span>
+            </div>
+        </nav>
+        <div>
+            <div class="container-fluid">
+                <span>Wellcome,</span><span> Chu Thị Ngọc</span>
+            </div>
+            <div class="container-fluid">
+                <a href="banhang.html"><button class="navbar-brand btn btn-dark w-100 p-3 mb-2 text-light">Bán hàng tại quầy</button></a>
+            </div>
+            <div class="container-fluid">
+                <a href="hienthi.html"><button class="navbar-brand mb-0 h1 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý sản phẩm</button></a>
+            </div>
+            <div class="container-fluid">
+                <a href="nhanvien.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light ">Quản lý nhân viên</button></a>
+            </div>
+            <div class="container-fluid">
+                <a href="khachhang.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý khách hàng</button></a>
+            </div>
+            <div class="container-fluid">
+                <a href="hoadon.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý hóa đơn</button></a>
+            </div>
+            <div class="container-fluid">
+                <a href="thongke.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Thống kê</button></a>
+            </div>
+            <div class="container-fluid">
+                <a href="magiamgia.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý mã giảm giá</button></a>
+            </div>
+            <div class="container-fluid">
+                <a href="taikhoan.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý tài khoản</button></a>
+            </div>
+            <div class="container-fluid">
+                <button class="navbar-brand mb-0 h2 btn btn-danger w-100 p-3 mb-2 text-light">
+                    Đăng xuất
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                        <path fill-rule="evenodd"
+                              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+        <!-- Main Content -->
+        <div class="container-fluid p-4">
+            <div class="row">
+                <!-- Danh sách sản phẩm -->
+                <div class="col-md-8">
+                    <div class="card mb-4">
+                        <div class="card-header bg-warning text-white">
+                            <strong>Danh sách sản phẩm</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- Tìm kiếm sản phẩm -->
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Bảng sản phẩm -->
+                            <table class="table table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Mã SP</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Tồn kho</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SP001</td>
+                                        <td>Túi xách thời trang</td>
+                                        <td>1,200,000đ</td>
+                                        <td>15</td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm">Thêm vào giỏ</button>
+                                        </td>
+                                    </tr>
+                                    <!-- Thêm các sản phẩm khác -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Giỏ hàng -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-warning text-white">
+                            <strong>Giỏ hàng</strong>
+                        </div>
+                        <div class="card-body">
+                            <!-- Thông tin khách hàng -->
+                            <div class="mb-3">
+                                <label class="form-label">Khách hàng</label>
+                                <select class="form-select">
+                                    <option value="">Chọn khách hàng</option>
+                                    <option>Khách lẻ</option>
+                                    <option>Nguyễn Văn A</option>
+                                    <option>Trần Thị B</option>
+                                </select>
+                            </div>
+
+                            <!-- Danh sách sản phẩm trong giỏ -->
+                            <div class="mb-3">
+                                <div class="list-group">
+                                    <div class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-0">Túi xách thời trang</h6>
+                                                <small class="text-muted">1,200,000đ x 1</small>
+                                            </div>
+                                            <div>
+                                                <button class="btn btn-sm btn-outline-danger">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tổng tiền -->
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Tạm tính:</span>
+                                    <span>1,200,000đ</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Giảm giá:</span>
+                                    <span>0đ</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <strong>Tổng cộng:</strong>
+                                    <strong class="text-danger">1,200,000đ</strong>
+                                </div>
+                            </div>
+
+                            <!-- Nút thanh toán -->
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary">Thanh toán</button>
+                                <button class="btn btn-outline-secondary">Hủy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
