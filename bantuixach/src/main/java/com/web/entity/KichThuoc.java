@@ -4,26 +4,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
-@Table(name = "GioHang")
+@Table(name = "KichThuoc")
 @Getter
 @Setter
-public class GioHang {
+public class KichThuoc {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    private Integer soLuong;
-
-    private Date createdAt;
-
-    @ManyToOne
-    private TaiKhoan taiKhoan;
-
-    @ManyToOne
-    private SanPhamChiTiet sanPhamChiTiet;
+    private String ten;
 }
