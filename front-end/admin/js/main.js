@@ -23,16 +23,17 @@ $(document).ready(function() {
                     <a href="loaisanpham.html"><button class="navbar-brand btn btn-dark w-100 text-light">Loại sản phẩm</button></a>
                 </div>
                 <div class="container-fluid">
-                    <a href="loaisanpham.html"><button class="navbar-brand btn btn-dark w-100 text-light">Kích thước</button></a>
-                </div>
-                <div class="container-fluid">
-                    <a href="loaisanpham.html"><button class="navbar-brand btn btn-dark w-100 text-light">Màu sắc</button></a>
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <button class="navbar-brand btn btn-dark w-100 text-light">Quản lý sản phẩm</button>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="kichthuoc.html">Kích thước</a></li>
+                            <li><a class="dropdown-item" href="mausac.html">Màu sắc</a></li>
+                            <li><a class="dropdown-item" href="sanpham.html">Danh sách sản phẩm</a></li>
+                        </ul>
                 </div>
                 <div class="container-fluid">
                     <a href="banhang.html"><button class="navbar-brand btn btn-dark w-100 text-light">Bán hàng tại quầy</button></a>
-                </div>
-                <div class="container-fluid">
-                    <a href="hienthi.html"><button class="navbar-brand mb-0 h1 btn btn-dark w-100 text-light">Quản lý sản phẩm</button></a>
                 </div>
                 <div class="container-fluid">
                     <a href="hoadon.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 text-light">Quản lý hóa đơn</button></a>
@@ -40,11 +41,17 @@ $(document).ready(function() {
                 <div class="container-fluid">
                     <a href="thongke.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 text-light">Thống kê</button></a>
                 </div>
-                <div class="container-fluid">
-                    <a href="magiamgia.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 text-light">Quản lý mã giảm giá</button></a>
+                 <div class="container-fluid">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <button class="navbar-brand btn btn-dark w-100 text-light">Quản lý giảm giá</button>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="giamgiadonhang.html">Giảm giá đơn hàng</a></li>
+                            <li><a class="dropdown-item" href="giamgiasanpham.html">Giảm giá sản phẩm</a></li>
+                        </ul>
                 </div>
                 <div class="container-fluid">
-                    <button class="navbar-brand mb-0 h2 btn btn-danger w-100 text-light">
+                    <button onclick="dangXuat()" class="navbar-brand mb-0 h2 btn btn-danger w-100 text-light">
                         Đăng xuất
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -63,7 +70,7 @@ $(document).ready(function() {
 async function dangXuat() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location.replace('../login')
+    window.location.replace('../login.html')
 }
 
 
