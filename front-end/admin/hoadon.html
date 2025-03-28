@@ -5,60 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản Lý Hóa Đơn</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/SanPham/CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="js/main.js"></script>
+    <script src="js/hoadon.js"></script>
+    <script>
+        window.onload = function() {
+            loadHoaDon();
+        }
+    </script>
 </head>
 <body>
     <div class="d-flex">
        <!-- Sidebar -->
-       <div class="sidebar">
-        <nav class="mb-4">
-            <div class="d-flex align-items-center mb-3">
-                <img src="/SanPham/img/logoDojin Luxury.jpg" alt="Dojin Luxury" class="rounded-circle" width="60" height="60">
-                <span class="ms-3 fs-5">Dojin Luxury</span>
-            </div>
-        </nav>
-        <div>
-            <div class="container-fluid">
-                <span>Wellcome,</span><span> Chu Thị Ngọc</span>
-            </div>
-            <div class="container-fluid">
-                <a href="banhang.html"><button class="navbar-brand btn btn-dark w-100 p-3 mb-2 text-light">Bán hàng tại quầy</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="hienthi.html"><button class="navbar-brand mb-0 h1 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý sản phẩm</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="nhanvien.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light ">Quản lý nhân viên</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="khachhang.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý khách hàng</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="hoadon.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý hóa đơn</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="thongke.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Thống kê</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="magiamgia.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý mã giảm giá</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="taikhoan.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý tài khoản</button></a>
-            </div>
-            <div class="container-fluid">
-                <button class="navbar-brand mb-0 h2 btn btn-danger w-100 p-3 mb-2 text-light">
-                    Đăng xuất
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                        <path fill-rule="evenodd"
-                              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                    </svg>
-                </button>
-            </div>
+       <div class="sidebar"  id="menuadmin">
         </div>
-    </div>
 
         <!-- Main Content -->
         <div class="container-fluid p-4">
@@ -69,55 +42,124 @@
                 <div class="card-body">
                     <!-- Bộ lọc -->
                     <div class="row mb-3">
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label class="form-label">Từ ngày</label>
-                            <input type="date" class="form-control">
+                            <input id="start" type="date" class="form-control">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label class="form-label">Đến ngày</label>
-                            <input type="date" class="form-control">
+                            <input id="end" type="date" class="form-control">
                         </div>
-                        <div class="col-md-3">
-                            <label class="form-label">Trạng thái</label>
-                            <select class="form-select">
+                        <div class="col-md-2">
+                            <label class="form-label">Trạng thái vận chuyển</label>
+                            <select id="trangthai" class="form-select">
                                 <option value="">Tất cả</option>
-                                <option>Đã thanh toán</option>
-                                <option>Chưa thanh toán</option>
-                                <option>Đã hủy</option>
+                                <option value="DANG_CHO_XAC_NHAN">Đang chờ xác nhận</option>
+                                <option value="DA_XAC_NHAN">Đã xác nhận</option>
+                                <option value="DA_GUI">Đã gửi</option>
+                                <option value="DA_NHAN">Đã nhận</option>
+                                <option value="DA_HUY">Đã hủy</option>
+                                <option value="KHONG_NHAN_HANG">Không nhận hàng</option>
                             </select>
                         </div>
-                        <div class="col-md-3">
-                            <label class="form-label">Tìm kiếm</label>
-                            <input type="text" class="form-control" placeholder="Mã hóa đơn...">
+                        <div class="col-md-2">
+                            <label class="form-label">Loại thanh toán</label>
+                            <select id="type" class="form-select">
+                                <option value="">Tất cả</option>
+                                <option value="VNPAY">Thanh toán vnpay</option>
+                                <option value="COD">Chưa thanh toán khi nhận hàng</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label">&ThinSpace;</label>
+                            <button onclick="loadHoaDon()" class="form-control btn btn-primary">Lọc kết quả</button>
                         </div>
                     </div>
 
                     <!-- Bảng hóa đơn -->
-                    <table class="table table-hover">
+                    <table id="example" class="table table-hover">
                         <thead class="table-dark">
                             <tr>
-                                <th>Mã HĐ</th>
-                                <th>Ngày tạo</th>
-                                <th>Khách hàng</th>
+                                <th style="width: 8%;">Mã đơn hàng</th>
+                                <th>Ngày đặt</th>
+                                <th>Loại đơn</th>
                                 <th>Tổng tiền</th>
+                                <th>Phí ship</th>
+                                <th style="width: 30%;">Thông tin<br>nhận hàng</th>
                                 <th>Trạng thái</th>
-                                <th>Thao tác</th>
+                                <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>HD001</td>
-                                <td>01/03/2024</td>
-                                <td>Nguyễn Văn A</td>
-                                <td>1,200,000đ</td>
-                                <td><span class="badge bg-success">Đã thanh toán</span></td>
-                                <td>
-                                    <button class="btn btn-info btn-sm">Chi tiết</button>
-                                    <button class="btn btn-danger btn-sm">Hủy</button>
-                                </td>
-                            </tr>
+                        <tbody id="listinvoice">
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+      <!-- Modal Chi tiết đơn hàng -->
+      <div class="modal fade" id="orderDetailModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chi tiết đơn hàng #DH001</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <h6>Thông tin đơn hàng</h6>
+                            <p class="mb-1">Ngày đặt: <span id="ngaydat"></span></p>
+                            <p class="mb-1">Trạng thái: <span id="trangthaiup">Đã giao</span></p>
+                            <p class="mb-1">Phương thức thanh toán: <span id="pttt"></span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Địa chỉ giao hàng</h6>
+                            <p class="mb-1" id="hotengh">Nguyễn Văn A</p>
+                            <p class="mb-1" id="sdtgh">0123456789</p>
+                            <p class="mb-1" id="dcgh">123 Đường ABC, Phường XYZ, Quận 1, TP.HCM</p>
+                        </div>
+                    </div>
+                    <div class="divtrangthaiupdate">
+                        <h6>Cập nhật trạng thái</h6>
+                        <div id="divbtnupdate" class="d-flex">
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng</th>
+                                </tr>
+                            </thead>
+                            <tbody id="listDetailinvoice">
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="text-end">Tạm tính:</td>
+                                    <td id="tamtinhgia">1,200,000đ</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end">Phí vận chuyển:</td>
+                                    <td id="phivc">30,000đ</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end">Giảm giá:</td>
+                                    <td id="giamgiavc">0đ</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="text-end"><strong>Tổng cộng:</strong></td>
+                                    <td><strong class="text-danger" id="tongcong">1,230,000đ</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,110 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết sản phẩm - Dojin Luxury</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="Css/custom.css">
+    <script src="js/menu.js"></script>
+    <script src="js/sanpham.js"></script>
+    <script src="js/giohang.js"></script>
+    <script>
+        window.onload = function() {
+            loadMenu();
+            loadAProduct();
+        }
+    </script>
 </head>
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Dojin Luxury</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Form tìm kiếm -->
-                <form class="d-flex me-auto ms-4">
-                    <div class="input-group">
-                        <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" style="min-width: 300px;">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Danh mục
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Túi xách tay</a></li>
-                            <li><a class="dropdown-item" href="#">Túi đeo chéo</a></li>
-                            <li><a class="dropdown-item" href="#">Túi đeo vai</a></li>
-                            <li><a class="dropdown-item" href="#">Balo</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
-                </ul>
-                
-                <div class="d-flex align-items-center">
-                    <!-- Nút tra cứu đơn hàng -->
-                    <button type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#orderTrackingModal">
-                        <i class="fas fa-truck me-1"></i> Tra cứu đơn hàng
-                    </button>
-
-                    <a href="#" class="btn btn-outline-dark me-2 position-relative">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            3
-                        </span>
-                    </a>
-                    <div class="dropdown me-3">
-                        <a class="btn btn-outline-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-user"></i> Nguyễn Văn A
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Tài khoản</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Lịch sử mua hàng</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="menu">
     </nav>
-
-    <!-- Modal Tra cứu đơn hàng -->
-    <div class="modal fade" id="orderTrackingModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Tra cứu đơn hàng</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="orderNumber" class="form-label">Mã đơn hàng</label>
-                            <input type="text" class="form-control" id="orderNumber" placeholder="Nhập mã đơn hàng của bạn">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phoneNumber" class="form-label">Số điện thoại</label>
-                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Nhập số điện thoại đặt hàng">
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Tra cứu</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Breadcrumb -->
-    <div class="container mt-4">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="#">Túi xách tay</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Túi xách thời trang</li>
-            </ol>
-        </nav>
-    </div>
 
     <!-- Chi tiết sản phẩm -->
     <div class="container my-5">
@@ -121,11 +41,8 @@
                             <img src="/SanPham/img/1.jpg" class="img-fluid rounded" alt="Túi xách" id="mainImage">
                         </div>
                         <!-- Ảnh thumbnail -->
-                        <div class="d-flex gap-2">
+                        <div class="d-flex gap-2" id="listanhphu">
                             <img src="/SanPham/img/1.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
-                            <img src="/SanPham/img/10.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
-                            <img src="/SanPham/img/11.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
-                            <img src="/SanPham/img/12.jpg" class="img-thumbnail" style="width: 80px; cursor: pointer;" onclick="changeImage(this.src)">
                         </div>
                     </div>
                 </div>
@@ -133,11 +50,11 @@
 
             <!-- Thông tin sản phẩm -->
             <div class="col-md-6">
-                <h2 class="mb-3">Túi xách thời trang</h2>
+                <h2 class="mb-3" id="tensp">Túi xách thời trang</h2>
                 <div class="mb-3">
-                    <span class="h3 text-danger">1,200,000đ</span>
-                    <span class="text-muted text-decoration-line-through ms-2">1,500,000đ</span>
-                    <span class="badge bg-danger ms-2">-20%</span>
+                    <span class="h3 text-danger" id="giaban"></span>
+                    <span class="text-muted text-decoration-line-through ms-2" id="giacu"></span>
+                    <!-- <span class="badge bg-danger ms-2">-20%</span> -->
                 </div>
 
                 <!-- Đánh giá -->
@@ -157,19 +74,15 @@
                 <!-- Màu sắc -->
                 <div class="mb-3">
                     <h6>Màu sắc:</h6>
-                    <div class="d-flex gap-2">
-                        <div class="form-check">
+                    <div class="d-flex gap-2"  id="listmausac">
+                        <!-- <div class="form-check">
                             <input class="form-check-input" type="radio" name="color" id="color1" checked>
                             <label class="form-check-label" for="color1">Đen</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="color" id="color2">
-                            <label class="form-check-label" for="color2">Nâu</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="color" id="color3">
-                            <label class="form-check-label" for="color3">Đỏ</label>
-                        </div>
+                        </div> -->
+                    </div>
+                    <h6>Kích thước:</h6>
+                    <div class="d-flex gap-2"  id="listikchthuoc">
+                        
                     </div>
                 </div>
 
@@ -185,10 +98,10 @@
 
                 <!-- Nút mua hàng -->
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg">
+                    <button onclick="addCart(1)" class="btn btn-primary btn-lg">
                         <i class="fas fa-shopping-cart me-2"></i>Thêm vào giỏ
                     </button>
-                    <button class="btn btn-danger btn-lg">Mua ngay</button>
+                    <button onclick="addCart(0)" class="btn btn-danger btn-lg">Mua ngay</button>
                 </div>
 
                 <!-- Thông tin thêm -->
@@ -305,8 +218,7 @@
     </div>
 
     <!-- Footer (copy từ index.html) -->
-    <footer class="bg-dark text-light py-4">
-        <!-- Copy nội dung footer từ index.html -->
+    <footer class="bg-dark text-light py-4" id="footer">
     </footer>
 
     <!-- Bootstrap JS -->

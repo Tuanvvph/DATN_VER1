@@ -23,5 +23,5 @@ public interface UserRepository extends JpaRepository<TaiKhoan,Long> {
     Long tongUserByRole(String role);
 
     @Query("select count(u.id) from TaiKhoan u where u.quyen.tenQuyen = ?1")
-    public Double countAdmin(String role);
+    public Long countAdmin(String role);
 }

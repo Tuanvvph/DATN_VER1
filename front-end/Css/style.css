@@ -409,6 +409,145 @@ body {
 .iconaction{
     cursor: pointer;
 }
+.sidebar .dropdown-item {
+    color: #000 !important;
+    text-decoration: none;
+}
+.sidebar .dropdown-item:hover {
+    text-decoration: none;
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #bdb3b3;
+}
+.lb-form{
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+
+@keyframes barWidth {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 50%;
+    }
+    50% {
+        width: 100%;
+    }
+    75% {
+        width: 50%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes barWidth2 {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+#loading {
+    margin-top: 20px;
+    height: 4px;
+    width: 100%;
+    display: none;
+}
+
+.bar {
+    position: relative;
+    width: 0%;
+    height: 100%;
+    margin: 0 auto;
+    animation: barWidth;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.bar1 {
+    animation-delay: 0s;
+    background: #02a09a;
+    top: 0;
+    z-index: 1;
+}
+.imgtable{
+    width: 100px;
+}
+.sticky-col a{
+    margin-right: 5px;
+}
+.sticky-col button{
+    margin-right: 5px;
+}
+.thongtinspchitiet span{
+    margin-right: 5px;
+}
+.lb-sanpham{
+    font-weight: 500;
+}
+
+.select2-container--default .select2-selection--single {
+    height: calc(2.25rem + 2px); /* Độ cao giống form-control */
+    padding: 0.375rem 0.75rem; /* Padding giống form-control */
+    font-size: 1rem; /* Kích thước chữ */
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem; /* Bo tròn góc */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 1.5; /* Căn chỉnh văn bản */
+    padding-left: 0; /* Để không bị lệch */
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100%; /* Căn chỉnh mũi tên */
+}
+.select2-container {
+    width: 100% !important; /* Đảm bảo nó không vượt quá div cha */
+}
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}
+
+#divbtnupdate button{
+    margin-right: 10px;
+}
+.inputsltaiquay{
+    width: 40px;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 5px 10px;
+    text-align: center;
+}
+.btnupanddown{
+    width: 20px;
+    border-radius: 8px;
+    font-size: 12px;
+    border: 1px solid gray;
+    margin-right: 5px;
+    margin-left: 5px;
+    text-align: center;
+}
 
 
 @keyframes show {

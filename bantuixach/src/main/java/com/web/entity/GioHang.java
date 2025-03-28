@@ -17,14 +17,13 @@ public class GioHang {
     @Column(name = "id")
     private Long id;
 
-    private Double tongGia;
-
-    private Integer tongSoLuong;
+    private Integer soLuong;
 
     private Date createdAt;
 
-    private Date updatedAt;
-
     @ManyToOne
     private TaiKhoan taiKhoan;
+
+    @ManyToOne
+    private SanPhamChiTiet sanPhamChiTiet;
 }

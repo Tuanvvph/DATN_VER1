@@ -5,60 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bán Hàng Tại Quầy</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/SanPham/CSS/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js"></script>
+    <link href="https://cdn.datatables.net/1.13.2/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.2/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <script src="js/main.js"></script>
+    <script src="js/hoadon.js"></script>
+    <script src="js/bantaiquay.js"></script>
+    <script src="js/sanpham.js"></script>
+    <script>
+        window.onload = async function() {
+            await kiemTra();
+            loadDonChoSelect();
+            loadSanPhamTaiQuay();
+            loadGiamGiaDHTaiQuay();
+        }
+    </script>
 </head>
 <body>
     <div class="d-flex">
        <!-- Sidebar -->
-       <div class="sidebar">
-        <nav class="mb-4">
-            <div class="d-flex align-items-center mb-3">
-                <img src="/SanPham/img/logoDojin Luxury.jpg" alt="Dojin Luxury" class="rounded-circle" width="60" height="60">
-                <span class="ms-3 fs-5">Dojin Luxury</span>
-            </div>
-        </nav>
-        <div>
-            <div class="container-fluid">
-                <span>Wellcome,</span><span> Chu Thị Ngọc</span>
-            </div>
-            <div class="container-fluid">
-                <a href="banhang.html"><button class="navbar-brand btn btn-dark w-100 p-3 mb-2 text-light">Bán hàng tại quầy</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="hienthi.html"><button class="navbar-brand mb-0 h1 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý sản phẩm</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="nhanvien.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light ">Quản lý nhân viên</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="khachhang.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý khách hàng</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="hoadon.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý hóa đơn</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="thongke.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Thống kê</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="magiamgia.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý mã giảm giá</button></a>
-            </div>
-            <div class="container-fluid">
-                <a href="taikhoan.html"><button class="navbar-brand mb-0 h2 btn btn-dark w-100 p-3 mb-2 text-light">Quản lý tài khoản</button></a>
-            </div>
-            <div class="container-fluid">
-                <button class="navbar-brand mb-0 h2 btn btn-danger w-100 p-3 mb-2 text-light">
-                    Đăng xuất
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                        <path fill-rule="evenodd"
-                              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                    </svg>
-                </button>
-            </div>
+        <div class="sidebar" id="menuadmin">
         </div>
-    </div>
 
         <!-- Main Content -->
         <div class="container-fluid p-4">
@@ -71,37 +48,21 @@
                         </div>
                         <div class="card-body">
                             <!-- Tìm kiếm sản phẩm -->
-                            <div class="mb-3">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
-                                    <button class="btn btn-outline-secondary" type="button">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-
                             <!-- Bảng sản phẩm -->
-                            <table class="table table-hover">
+                            <table id="example" class="table table-hover">
                                 <thead class="table-dark">
                                     <tr>
-                                        <th>Mã SP</th>
+                                        <th>STT</th>
                                         <th>Tên sản phẩm</th>
-                                        <th>Giá</th>
-                                        <th>Tồn kho</th>
-                                        <th>Thao tác</th>
+                                        <th>Giá bán</th>
+                                        <th>Loại sản phẩm</th>
+                                        <th>Ngày tạo</th>
+                                        <th>Ngày cập nhật</th>
+                                        <th>Chi tiết</th>
+                                        <th>Chức năng</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>SP001</td>
-                                        <td>Túi xách thời trang</td>
-                                        <td>1,200,000đ</td>
-                                        <td>15</td>
-                                        <td>
-                                            <button class="btn btn-primary btn-sm">Thêm vào giỏ</button>
-                                        </td>
-                                    </tr>
-                                    <!-- Thêm các sản phẩm khác -->
+                                <tbody id="listdatasp">
                                 </tbody>
                             </table>
                         </div>
@@ -117,31 +78,34 @@
                         <div class="card-body">
                             <!-- Thông tin khách hàng -->
                             <div class="mb-3">
-                                <label class="form-label">Khách hàng</label>
-                                <select class="form-select">
-                                    <option value="">Chọn khách hàng</option>
-                                    <option>Khách lẻ</option>
-                                    <option>Nguyễn Văn A</option>
-                                    <option>Trần Thị B</option>
+                                <div class="d-flex">
+                                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">Thêm đơn chờ mới</button>
+                                </div><br>
+                                <select id="listdoncho" class="form-select" onchange="loadChiTietHoaDonCho()">
                                 </select>
                             </div>
 
                             <!-- Danh sách sản phẩm trong giỏ -->
                             <div class="mb-3">
-                                <div class="list-group">
-                                    <div class="list-group-item">
+                                <div class="list-group" id="listspchitiet">
+                                    <!-- <div class="list-group-item">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div>
                                                 <h6 class="mb-0">Túi xách thời trang</h6>
                                                 <small class="text-muted">1,200,000đ x 1</small>
                                             </div>
+                                            <div class="d-flex">
+                                                <button class="btnupanddown">-</button>
+                                                <input type="text" placeholder="Số lượng" class="inputsltaiquay">
+                                                <button class="btnupanddown">+</button>
+                                            </div>
                                             <div>
                                                 <button class="btn btn-sm btn-outline-danger">
-                                                    <i class="fas fa-trash"></i>
+                                                    <i class="fa fa-remove"></i>
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -149,22 +113,25 @@
                             <div class="mb-3">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span>Tạm tính:</span>
-                                    <span>1,200,000đ</span>
+                                    <span id="tongTientam">0đ</span>
                                 </div>
                                 <div class="d-flex justify-content-between mb-2">
                                     <span>Giảm giá:</span>
-                                    <span>0đ</span>
+                                    <span id="giamgia">0đ</span>
                                 </div>
+                                <select onchange="changeGiamGia()" class="form-control" id="listvoucher">
+
+                                </select>
                                 <hr>
                                 <div class="d-flex justify-content-between">
                                     <strong>Tổng cộng:</strong>
-                                    <strong class="text-danger">1,200,000đ</strong>
+                                    <strong class="text-danger" id="tongcong">0đ</strong>
                                 </div>
                             </div>
 
                             <!-- Nút thanh toán -->
                             <div class="d-grid gap-2">
-                                <button class="btn btn-primary">Thanh toán</button>
+                                <button onclick="xacNhanBan()" class="btn btn-primary">Thanh toán</button>
                                 <button class="btn btn-outline-secondary">Hủy</button>
                             </div>
                         </div>
@@ -174,6 +141,52 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Thêm đơn chờ</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label>Họ tên</label>
+                <input type="text" class="form-control" id="hotendc">
+                <label>Số điện thoại</label>
+                <input type="text" class="form-control" id="sdtdc">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+              <button onclick="addDonCho()" type="button" class="btn btn-primary">Lưu</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCtSP" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Chọn sản phẩm chi tiết</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Màu sắc:</h6>
+                <div class="d-flex gap-2"  id="listmausac">
+                </div>
+                <h6>Kích thước:</h6>
+                <div class="d-flex gap-2"  id="listikchthuoc">
+                </div>
+
+                <h6 id="giaban"></h6>
+                <h6 id="giacu"></h6>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+              <button onclick="addSpChiTiet()" type="button" class="btn btn-primary">Chọn</button>
+            </div>
+          </div>
+        </div>
+    </div>
 </body>
 </html> 
