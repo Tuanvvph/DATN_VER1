@@ -24,6 +24,12 @@ public class VoucherDonHangApi {
         return new ResponseEntity(result, HttpStatus.OK);
     }
 
+    @GetMapping("/user/voucher-khadung")
+    public ResponseEntity<?> voucherKhaDung() {
+        List<VoucherDonHang> result = voucherDonHangService.voucherKhaDung();
+        return new ResponseEntity(result, HttpStatus.OK);
+    }
+
     @PostMapping("/admin/create-update")
     public ResponseEntity<?> save(@RequestBody VoucherDonHang voucherDonHang){
         VoucherDonHang result = voucherDonHangService.save(voucherDonHang);

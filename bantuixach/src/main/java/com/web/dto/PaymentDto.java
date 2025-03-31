@@ -9,7 +9,7 @@ import java.util.List;
 @Getter
 @Setter
 public class PaymentDto {
-    private String content;
     private String returnUrl;
+    private Integer tongTien;
 }
 

@@ -50,6 +50,10 @@ public class GioHangService {
         gioHangRepository.deleteById(id);
     }
 
+    public void removeAll() {
+        gioHangRepository.deleteByTaiKhoan(userUtils.getUserWithAuthority().getId());
+    }
+
     public List<GioHang> findByUser() {
         List<GioHang> list = gioHangRepository.findByUser(userUtils.getUserWithAuthority().getId());
         return list;
@@ -83,4 +87,6 @@ public class GioHangService {
         }
         return total;
     }
+
+
 }

@@ -11,8 +11,7 @@ async function loadMenu() {
                             <i class="fas fa-user"></i> ${user.hoTen}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Tài khoản</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Lịch sử mua hàng</a></li>
+                            <li><a class="dropdown-item" href="account.html"><i class="fas fa-user-circle me-2"></i>Tài khoản</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li onclick="logout()"><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
                         </ul>
@@ -152,7 +151,7 @@ async function loadMenu() {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tiếp tục mua sắm</button>
-                    <a href="/checkout" class="btn btn-primary">Tiến hành thanh toán</a>
+                    <a href="checkout.html" class="btn btn-primary">Tiến hành thanh toán</a>
                 </div>
             </div>
         </div>
@@ -167,26 +166,35 @@ async function loadMenu() {
 
 
 function loadFooter() {
-    var foo = `<div class="container">
+    var foo = ` <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h5>Về chúng tôi</h5>
-                    <p>Chuyên cung cấp các loại túi xách thời trang chất lượng cao</p>
+                <div class="col-md-3">
+                    <h5>Dojin Luxury</h5>
+                    <p>Chuyên cung cấp các sản phẩm thời trang cao cấp</p>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
+                    <h5>Liên kết nhanh</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Trang chủ</a></li>
+                        <li><a href="#" class="text-light">Sản phẩm</a></li>
+                        <li><a href="#" class="text-light">Giới thiệu</a></li>
+                        <li><a href="#" class="text-light">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
                     <h5>Liên hệ</h5>
-                    <p>
-                        <i class="fas fa-phone"></i> 0123 456 789<br>
-                        <i class="fas fa-envelope"></i> info@tuixinh.com<br>
-                        <i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ
-                    </p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Đường ABC, Quận XYZ, TP.HCM</li>
+                        <li><i class="fas fa-phone me-2"></i>0123 456 789</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@dojinluxury.com</li>
+                    </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <h5>Theo dõi chúng tôi</h5>
-                    <div class="social-links">
-                        <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-twitter fa-lg"></i></a>
                     </div>
                 </div>
             </div>

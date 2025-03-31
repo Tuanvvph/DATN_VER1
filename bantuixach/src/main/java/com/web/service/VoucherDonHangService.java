@@ -3,6 +3,7 @@ package com.web.service;
 import com.web.entity.VoucherDonHang;
 import com.web.exception.MessageException;
 import com.web.repository.VoucherDonHangRepository;
+import com.web.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,12 @@ public class VoucherDonHangService {
 
     @Autowired
     private VoucherDonHangRepository voucherRepository;
+
+    @Autowired
+    private UserUtils userUtils;
+
+    @Autowired
+    private GioHangService gioHangService;
 
     public VoucherDonHang save(VoucherDonHang v) {
         if(v.getId() == null){
@@ -63,6 +70,13 @@ public class VoucherDonHangService {
         return list;
     }
 
+
+    public List<VoucherDonHang> voucherKhaDung() {
+        Double tongCart = gioHangService.totalAmountCart();
+        List<VoucherDonHang> list = voucherRepository.voucherKhaDung(tongCart, new Date(System.currentTimeMillis()));
+        return list;
+    }
+
     public VoucherDonHang findByCodeAndDh(String code, Double donHang) {
         Optional<VoucherDonHang> v = voucherRepository.findByCode(code);
         if(v.isEmpty()){
@@ -75,7 +89,7 @@ public class VoucherDonHangService {
             if(v.get().getNgayBatDau().after(new Date(System.currentTimeMillis()))){
                 throw new MessageException("Voucher này chưa thể sử dụng");
             }
-            if(v.get().getDonToiThieu() < donHang){
+            if(v.get().getDonToiThieu() > donHang){
                 throw new MessageException("Hãy mua thêm "+(v.get().getDonToiThieu() - donHang) +" để có thể sử dụng voucher này");
             }
         }

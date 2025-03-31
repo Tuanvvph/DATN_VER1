@@ -30,3 +30,44 @@ async function addCart(type) {
         return null;
     }
 }
+
+
+
+async function loadCartCheckout() {
+    if(token == null){
+        return;
+    }
+    var url = 'http://localhost:8080/api/giohang/user/my-cart' ;
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: new Headers({
+            'Authorization': 'Bearer ' + token
+        })
+    });
+    if(response.status > 300){
+        return;
+    }
+    var list = await response.json();
+    console.log(list);
+    
+    var main = ''
+    for(i=0; i< list.length; i++){
+        main += 
+        `<div class="mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <img src="${list[i].sanPhamChiTiet.anh}" alt="Túi xách" style="width: 60px; height: 60px; object-fit: cover" class="me-3">
+                <div>
+                    <h6 class="mb-0">${list[i].sanPhamChiTiet.sanPham.tenSanPham}</h6>
+                    <small class="text-muted">Số lượng: ${list[i].soLuong}</small>
+                </div>
+                <div class="ms-auto">
+                    <span class="fw-bold">${formatmoney(list[i].sanPhamChiTiet.gia *list[i].soLuong )}</span>
+                </div>
+            </div>
+        </div>
+        `
+        tongGioHang = Number(tongGioHang) + list[i].soLuong * list[i].sanPhamChiTiet.gia;
+    }
+    document.getElementById("listcartcheckout").innerHTML = main;
+    loadPhiTinhTam();
+}

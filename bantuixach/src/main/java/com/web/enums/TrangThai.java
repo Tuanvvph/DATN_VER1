@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum Status {
+public enum TrangThai {
 
     DANG_CHO_XAC_NHAN,
     DA_XAC_NHAN,
